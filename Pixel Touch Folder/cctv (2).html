@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PixelTouch PTY LTD — CCTV Installations</title>
+
+  <style>
+
+  /* ============================
+     GLOBAL RESET
+     ============================ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ============================
+     HEADER (FIXED + PERFECT)
+     ============================ */
+
+  header {
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Left and right take equal width */
+  .nav-left,
+  .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  /* Right side stays right aligned */
+  .nav-right {
+    justify-content: flex-end;
+  }
+
+  /* Center logo */
+  .logo {
+    flex: 0;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ============================
+     DROPDOWN
+     ============================ */
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropbtn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: #fff;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 15px;
+    color: #333;
+  }
+
+  .dropdown-content a:hover {
+    background: #f5f5f5;
+    color: #0071e3;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* ============================
+     HERO SECTION
+     ============================ */
+
+  .hero {
+    background: #f5f7fa;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .hero h3 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 25px;
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 30px;
+  }
+
+  .cta {
+    display: inline-block;
+    background: #0071e3;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.2s;
+  }
+
+  .cta:hover {
+    background: #005bb5;
+  }
+
+  /* ============================
+     SPLIT SECTION
+     ============================ */
+
+  .split-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .split-left {
+    flex: 1;
+  }
+
+  .split-left h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .split-left p {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .split-left .small {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .split-right {
+    flex: 1;
+  }
+
+  .split-right img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  /* ============================
+     FEATURES
+     ============================ */
+
+  .features {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .feature-box {
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .feature-box h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .feature-box p {
+    font-size: 15px;
+    color: #555;
+  }
+
+  /* ============================
+     REVIEWS
+     ============================ */
+
+  .reviews {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fafafa;
+  }
+
+  .reviews h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .google-rating {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .review-cards {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .review-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .review-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .review-card strong {
+    font-size: 14px;
+    color: #555;
+  }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ============================
+     HEADER (FINAL)
+     ============================ -->
+<header>
+  <div class="nav-wrapper">
+
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Services</button>
+        <div class="dropdown-content">
+          <a href="cctv.html">CCTV</a>
+          <a href="repair.html">Repair & Maintenance</a>
+          <a href="tv-install.html">TV Installations</a>
+          <a href="appliance.html">Appliance Installation</a>
+          <a href="other.html">Other</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo">PixelTouch PTY LTD</div>
+
+    <div class="nav-right">
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================
+     HERO
+     ============================ -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Professional CCTV Installations You Can Trust</h1>
+    <h3>Nearly 20 years of experience delivering reliable, high‑performance security systems across Brisbane.</h3>
+
+    <p>
+      We install powerful CCTV systems for homeowners, small businesses, retail stores, industrial sites, and commercial buildings. 
+      Our advanced AI cameras, 180‑degree coverage, and 24/7 active monitoring give you complete visibility and control — day and night.
+    </p>
+
+    <a href="quote.html" class="cta">Get a Quote Now</a>
+  </div>
+</section>
+
+<!-- ============================
+     SPLIT SECTION
+     ============================ -->
+<section class="split-section">
+  <div class="split-left">
+    <h2>PixelTouch PTY LTD</h2>
+    <p>
+      Premium CCTV installation services for homes, businesses, and industrial sites across Brisbane. 
+      We deliver clean, fast, and reliable installations backed by nearly 20 years of experience.
+    </p>
+    <a href="quote.html" class="cta small">Get Quote</a>
+  </div>
+
+  <div class="split-right">
+    <img src="https://images.unsplash.com/photo-1581091870627-3a4c2c1d5c3b?auto=format&fit=crop&w=1200&q=80" alt="Indoor CCTV Camera">
+  </div>
+</section>
+
+<!-- ============================
+     FEATURES
+     ============================ -->
+<section class="features">
+  <div class="feature-box">
+    <h4>AI‑Powered Cameras</h4>
+    <p>Smart detection, alerts, and advanced analytics.</p>
+  </div>
+
+  <div class="feature-box">
+    <h4>180° Wide‑Angle Coverage</h4>
+    <p>Full visibility with minimal blind spots.</p>
+  </div>
+
+  <div class="feature-box">
+    <h4>Fast, Clean Installations</h4>
+    <p>Professional and tidy work every time.</p>
+  </div>
+
+  <div class="feature-box">
+    <h4>24/7 Monitoring + Warranty</h4>
+    <p>Reliable protection backed by a 2‑year warranty.</p>
+  </div>
+</section>
+
+<!-- ============================
+     REVIEWS
+     ============================ -->
+<section class="reviews">
+  <h2>What Our Customers Say</h2>
+  <div class="google-rating">
+    ⭐⭐⭐⭐⭐ <span>Rated 5.0 on Google</span>
+  </div>
+
+  <div class="review-cards">
+
+    <div class="review-card">
+      <p>"Professional, fast, and extremely clean installation."</p>
+      <strong>- Sarah, Brisbane</strong>
+    </div>
+
+    <div class="review-card">
+      <p>"Great pricing and top‑quality service."</p>
+      <strong>- Michael, Retail Owner</strong>
+    </div>
+
+    <div class="review-card">
+      <p>"Very impressed with the clarity and night vision."</p>
+      <strong>- Daniel, Homeowner</strong>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

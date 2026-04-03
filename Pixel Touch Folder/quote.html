@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get a Quote – PixelTouch PTY LTD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="nav-wrapper">
+
+   <div class="nav-left">
+  <a href="index.html">Home</a>
+
+  <div class="dropdown">
+    <button class="dropbtn">Services</button>
+    <div class="dropdown-content">
+      <a href="cctv.html">CCTV</a>
+      <a href="repair.html">Repair & Maintenance</a>
+      <a href="tv-install.html">TV Installations</a>
+      <a href="appliance.html">Appliance Installation</a>
+      <a href="other.html">Other</a>
+    </div>
+  </div>
+</div>
+
+
+      <!-- SERVICES DROPDOWN -->
+      <div class="dropdown">
+        <button class="dropbtn">Services</button>
+        <div class="dropdown-content">
+          <a href="cctv.html">CCTV</a>
+          <a href="repair.html">Repair & Maintenance</a>
+          <a href="tv-install.html">TV Installations</a>
+          <a href="appliance.html">Appliance Installation</a>
+          <a href="other.html">Other</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo">PixelTouch PTY LTD</div>
+
+    <div class="nav-right">
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </div>
+</header>
+
+
+<section class="quote-header">
+  <h1>Get a Quote</h1>
+  <p>Tell us about your property and what you’d like installed.</p>
+</section>
+
+<section class="quote-flow">
+
+  <!-- STEP INDICATOR -->
+  <div class="quote-steps">
+    <div class="quote-step active" id="step-indicator-1">1. Property Type</div>
+    <div class="quote-step" id="step-indicator-2">2. Service Type</div>
+    <div class="quote-step" id="step-indicator-3">3. Your Details</div>
+  </div>
+
+  <!-- STEP 1: PROPERTY TYPE -->
+  <div class="quote-step-panel" id="step-1">
+    <h2>What type of property is this for?</h2>
+    <p>Select the option that best describes your location.</p>
+
+    <div class="quote-grid">
+      <button class="quote-select" data-property="Residential">
+        <h3>Residential</h3>
+        <p>Homes, units, apartments, townhouses.</p>
+      </button>
+
+      <button class="quote-select" data-property="Business">
+        <h3>Business / Office</h3>
+        <p>Offices, commercial spaces, small businesses.</p>
+      </button>
+
+      <button class="quote-select" data-property="Hotel">
+        <h3>Hotel / Accommodation</h3>
+        <p>Hotels, motels, serviced apartments.</p>
+      </button>
+
+      <button class="quote-select" data-property="Retail">
+        <h3>Retail / Shopfront</h3>
+        <p>Shops, showrooms, customer‑facing spaces.</p>
+      </button>
+
+      <button class="quote-select" data-property="Industrial">
+        <h3>Industrial / Warehouse</h3>
+        <p>Warehouses, workshops, storage facilities.</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 2: SERVICE TYPE -->
+  <div class="quote-step-panel hidden" id="step-2">
+    <h2>What do you want installed?</h2>
+    <p>Choose the type of installation you’re interested in.</p>
+
+    <div class="quote-grid">
+      <button class="quote-select" data-service="TV Installation">
+        <h3>TV Installation</h3>
+        <p>Wall mounting, setup, cable concealment and more.</p>
+      </button>
+
+      <button class="quote-select" data-service="Camera Installation">
+        <h3>Camera Installation</h3>
+        <p>CCTV systems, upgrades, replacements and more.</p>
+      </button>
+
+      <button class="quote-select" data-service="Other">
+        <h3>Other</h3>
+        <p>Something else? Tell us what you need.</p>
+      </button>
+    </div>
+
+    <button class="back-link" id="back-to-step-1">← Back to property type</button>
+  </div>
+
+  <!-- STEP 3: DETAILS + FORM -->
+  <div class="quote-step-panel hidden" id="step-3">
+    <h2>Your Details</h2>
+    <p>We’ll use this information to prepare your quote.</p>
+
+    <form action="https://formspree.io/f/xreoanaa" method="POST" class="quote-form">
+
+      <!-- Hidden fields to capture choices -->
+      <input type="hidden" name="Property Type" id="propertyTypeField">
+      <input type="hidden" name="Service Type" id="serviceTypeField">
+
+      <label>Your Name</label>
+      <input type="text" name="name" required>
+
+      <label>Your Email</label>
+      <input type="email" name="email" required>
+
+      <label>Your Phone</label>
+      <input type="text" name="phone" required>
+
+      <label>Suburb / Location</label>
+      <input type="text" name="location">
+
+      <label>Tell us a bit more about the job</label>
+      <textarea name="message" rows="5" placeholder="e.g. 4‑camera system for a small warehouse, or 65” TV wall mount in living room." required></textarea>
+
+      <button type="submit" class="cta">Request Quote</button>
+
+      <button type="button" class="back-link" id="back-to-step-2">← Back to service type</button>
+    </form>
+  </div>
+
+</section>
+
+<script>
+  // Elements
+  const step1Panel = document.getElementById('step-1');
+  const step2Panel = document.getElementById('step-2');
+  const step3Panel = document.getElementById('step-3');
+
+  const stepIndicator1 = document.getElementById('step-indicator-1');
+  const stepIndicator2 = document.getElementById('step-indicator-2');
+  const stepIndicator3 = document.getElementById('step-indicator-3');
+
+  const propertyButtons = document.querySelectorAll('#step-1 .quote-select');
+  const serviceButtons = document.querySelectorAll('#step-2 .quote-select');
+
+  const backToStep1 = document.getElementById('back-to-step-1');
+  const backToStep2 = document.getElementById('back-to-step-2');
+
+  const propertyField = document.getElementById('propertyTypeField');
+  const serviceField = document.getElementById('serviceTypeField');
+
+  // Helpers
+  function showStep(stepNumber) {
+    step1Panel.classList.add('hidden');
+    step2Panel.classList.add('hidden');
+    step3Panel.classList.add('hidden');
+
+    stepIndicator1.classList.remove('active');
+    stepIndicator2.classList.remove('active');
+    stepIndicator3.classList.remove('active');
+
+    if (stepNumber === 1) {
+      step1Panel.classList.remove('hidden');
+      stepIndicator1.classList.add('active');
+    } else if (stepNumber === 2) {
+      step2Panel.classList.remove('hidden');
+      stepIndicator2.classList.add('active');
+    } else if (stepNumber === 3) {
+      step3Panel.classList.remove('hidden');
+      stepIndicator3.classList.add('active');
+    }
+  }
+
+  // Step 1 → Step 2
+  propertyButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const property = btn.getAttribute('data-property');
+      propertyField.value = property;
+      showStep(2);
+    });
+  });
+
+  // Step 2 → Step 3
+  serviceButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const service = btn.getAttribute('data-service');
+      serviceField.value = service;
+      showStep(3);
+    });
+  });
+
+  // Back buttons
+  backToStep1.addEventListener('click', () => showStep(1));
+  backToStep2.addEventListener('click', () => showStep(2));
+</script>
+
+</body>
+</html>
